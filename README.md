@@ -92,26 +92,6 @@ NeuroGraph uses a **layered AI infrastructure architecture**.
 
 ---
 
-# Example
-
-```cpp
-#include <neurograph/graph_agent.h>
-
-GraphAgent agent;
-
-agent.add_node("prompt", PromptNode());
-agent.add_node("retrieval", RetrievalNode());
-agent.add_node("llm", LLMNode());
-
-agent.connect("prompt", "retrieval");
-agent.connect("retrieval", "llm");
-
-auto response = agent.run(
-    "Explain quantum computing in simple terms"
-);
-
-std::cout << response << std::endl;
-
 #
 git clone https://github.com/yourusername/neurograph
 cd neurograph
@@ -163,6 +143,7 @@ real-time conversational AI
 Roadmap
 
 ## Planned features:
+
 graph visualizer
 distributed workflow execution
 multi-agent orchestration
@@ -170,13 +151,39 @@ plugin system for tools
 Python bindings
 Contributing
 ## Contributions are welcome.
+
 ## You can help by:
 implementing new nodes
 adding model backends
 improving documentation
 creating examples
+
 ## Please open an issue or submit a pull request.
+
 ## License
 MIT License
+
 ## Vision
 The goal of NeuroGraph is to become a high-performance AI orchestration framework for systems developers, enabling scalable agent architectures beyond the limitations of scripting environments.
+ 
+---
+# Example
+
+```cpp
+#include <neurograph/graph_agent.h>
+
+GraphAgent agent;
+
+agent.add_node("prompt", PromptNode());
+agent.add_node("retrieval", RetrievalNode());
+agent.add_node("llm", LLMNode());
+
+agent.connect("prompt", "retrieval");
+agent.connect("retrieval", "llm");
+
+auto response = agent.run(
+    "Explain quantum computing in simple terms"
+);
+
+std::cout << response << std::endl;
+
